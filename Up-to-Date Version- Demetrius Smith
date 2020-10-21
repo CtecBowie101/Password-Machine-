@@ -1,0 +1,357 @@
+import java.util.Scanner;
+
+public class JavaClass230 {
+
+ 
+
+public static void main(String[] args) {
+
+   
+
+    int min =10;
+
+    int max=16;
+
+    int digit=0;
+
+    int special=0;
+
+    int upCount=0;
+
+    int loCount=0;
+
+    String password;
+
+    System.out.println("Please enter a complex password to meet security standards after you create a valid password");
+
+    System.out.println("Enter a secret word to help remember your password ");
+
+    Scanner scan = new Scanner(System.in);
+
+    System.out.println(" Enter a Password:");
+
+        password = scan.nextLine();
+
+    if(password.length()>=min&&password.length()<=max){
+
+        for(int i =0;i<password.length();i++){
+
+            char c = password.charAt(i);
+
+            if(Character.isUpperCase(c)){
+
+                upCount++;
+
+            }
+
+            if(Character.isLowerCase(c)){
+
+                loCount++;
+
+            }
+
+            if(Character.isDigit(c)){
+
+                digit++;
+
+            }
+
+            if(c>=33&&c<=46||c==64){
+
+                special++;
+
+            }
+
+        }
+
+        if(special>=1&&loCount>=1&&upCount>=1&&digit>=1){
+
+            Scanner myObj = new Scanner(System.in);
+
+            System.out.println("This a valid password");
+
+            System.out.println("Enter a secret word");
+
+            String Sword = myObj.nextLine();
+
+           
+
+            System.out.println("word recieved");
+            
+            String str,Newstr=" ";  
+        System.out.print("Re-enter your password again to to be encrypted: ");  
+        try {  
+  
+        Scanner in=new Scanner(System.in);  
+        str=in.nextLine();  
+        for (int i=0;i<str.length();i++)  
+        {  
+            char ch=Character.toLowerCase(str.charAt(i));  
+            switch (ch)  
+            {  
+                case 'a':  
+                    Newstr=Newstr+"{";  
+                    break;  
+                case 'b':  
+                    Newstr=Newstr+"}";  
+                    break;  
+                case 'c':  
+                    Newstr=Newstr+"#";  
+                    break;  
+                case 'd':  
+                    Newstr=Newstr+"~";  
+                    break;  
+                case 'e':  
+                    Newstr=Newstr+"+";  
+                    break;  
+                case 'f':  
+                    Newstr=Newstr+"-";  
+                    break;  
+                case 'g':  
+                    Newstr=Newstr+"*";  
+                    break;  
+                case 'h':  
+                    Newstr=Newstr+"@";  
+                    break;  
+                case 'i':  
+                    Newstr=Newstr+"/";  
+                    break;  
+                case 'j':  
+                    Newstr=Newstr+"\\";  
+                    break;  
+                case 'k':  
+                    Newstr=Newstr+"?";  
+                    break;  
+                case 'l':  
+                    Newstr=Newstr+"$";  
+                    break;  
+                case 'm':  
+                    Newstr=Newstr+"!";  
+                    break;  
+                case 'n':  
+                    Newstr=Newstr+"^";  
+                    break;  
+                case 'o':  
+                    Newstr=Newstr+"(";  
+                    break;  
+                case 'p':  
+                    Newstr=Newstr+")";  
+                    break;  
+                case 'q':  
+                    Newstr=Newstr+"<";  
+                    break;  
+                case 'r':  
+                    Newstr=Newstr+">";  
+                    break;  
+                case 's' :  
+                    Newstr=Newstr+"=";  
+                    break;  
+                case 't':  
+                    Newstr=Newstr+";";  
+                    break;  
+                case 'u':  
+                    Newstr=Newstr+",";  
+                    break;  
+                case 'v' :  
+                    Newstr=Newstr+"_";  
+                    break;  
+                case 'w':  
+                    Newstr=Newstr+"[";  
+                    break;  
+                case 'x' :  
+                    Newstr=Newstr+"]";  
+                    break;  
+                case 'y':  
+                    Newstr=Newstr+":";  
+                    break;  
+                case 'z' :  
+                    Newstr=Newstr+"\"";  
+                    break;  
+                case ' ' :  
+                    Newstr=Newstr+" ";  
+                    break;  
+                case '.':  
+                    Newstr=Newstr+'3';  
+                    break;  
+                case ',':  
+                    Newstr=Newstr+"1";  
+                    break;  
+                case '(':  
+                    Newstr=Newstr+'4';  
+                    break;  
+                case '\"':  
+                    Newstr=Newstr+'5';  
+                    break;  
+                case ')' :  
+                    Newstr=Newstr+"7";  
+                    break;  
+                case '?' :  
+                    Newstr= Newstr+"2";  
+                    break;  
+                case '!':  
+                    Newstr= Newstr+"8";  
+                    break;  
+                case '-' :  
+                    Newstr= Newstr+"6";  
+                    break;  
+                case '%' :  
+                    Newstr = Newstr+"9";  
+                    break;  
+                case '1':  
+                    Newstr=Newstr+"r";  
+                    break;  
+                case '2':  
+                    Newstr=Newstr+"k";  
+                    break;  
+                case '3':  
+                    Newstr=Newstr+"b";  
+                    break;  
+                case '4':  
+                    Newstr = Newstr+"e";  
+                    break;  
+                case '5':  
+                    Newstr = Newstr+"q";  
+                    break;  
+                case '6':  
+                    Newstr = Newstr+"h";  
+                    break;  
+                case '7':  
+                    Newstr = Newstr+"u";  
+                    break;  
+                case '8' :  
+                    Newstr= Newstr+"y";  
+                    break;  
+                case '9':  
+                    Newstr = Newstr+"w";  
+                    break;  
+                case '0':  
+                    Newstr = Newstr+"z";  
+                    break;  
+                 default:  
+                    Newstr=Newstr+"0";  
+                    break;  
+            }  
+        }  
+        }  
+        catch(Exception ioe)  
+        {  
+            ioe.printStackTrace();  
+        }  
+        System.out.println("The encrypted password is: \n" +Newstr);  
+
+
+           
+
+           
+
+           
+
+           
+
+        }
+
+ 
+
+    }
+
+ 
+
+    if(password.length()<min){
+
+ 
+
+        for(int i =0;i<password.length();i++){
+
+            char c = password.charAt(i);
+
+            if(Character.isLowerCase(c)){
+
+                loCount++;
+
+            }
+
+            }
+
+ 
+
+        if(loCount>0){
+
+            System.out.println(" Password must be atleat "+min+" characters:");
+
+            System.out.println(" You did not meet requirements for upper case");
+
+            System.out.println(" You did not meet requirements for numbers");
+
+            System.out.println(" You did not meet requiremnts for special chracter");
+
+ 
+
+ 
+
+ 
+
+    }
+
+    }
+
+    else if(password.length()<min&&upCount>1){
+
+        for(int i =0;i<password.length();i++){
+
+        char c =password.charAt(i);
+
+        if(Character.isLowerCase(c)){
+
+            loCount++;
+
+        }
+
+         if(Character.isUpperCase(c)){
+
+            upCount++;
+
+        }
+
+        }
+
+        if(loCount>0&&upCount>0){
+
+        System.out.println(" Password must be atleast "+min+" chracters:");
+
+        System.out.println(" You need atleast one digit:");
+
+        System.out.println(" You need atleast one special chracter:");
+
+    }
+
+    }
+
+     if(password.length()>max||password.length()>=max&&upCount>1&&loCount>1&&digit>1){
+
+         System.out.println(" Password has exceeded the limit .Limit is "+max+" chracters:");
+
+                 System.out.println(" You need atleast one special chracter:");
+
+ 
+
+        }
+
+      if(password.length()>=min&&password.length()<=max&&loCount>0&&upCount>0&&digit>0&&special==0){
+
+         System.out.println(" You need atleast a special chracter");
+
+     }
+
+      if(password.length()>=min&&password.length()<=max&&loCount>0&&upCount>0&&digit==0&&special==0){
+
+         System.out.println(" You need atleast one digit:");
+
+         System.out.println(" You need atleast one special chracter:");
+         
+         
+
+     }
+
+   }
+
+}
