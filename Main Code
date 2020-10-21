@@ -26,7 +26,7 @@ public static void main(String[] args) {
    
     while(incorrect) {
    
-        password = scan.nextLine();
+        
        
         if(password.length()>=min&&password.length()<=max){
 
@@ -162,23 +162,7 @@ public static void main(String[] args) {
         }
 
          if(password.length()>max||password.length()>=max&&upCount>1&&loCount>1&&digit>1){
-
-             System.out.println(" Password has exceeded the limit .Limit is "+max+" chracters:");
-
-                     System.out.println(" You need atleast one special chracter:");
-
-     
-
-            }
-
-          if(password.length()>=min&&password.length()<=max&&loCount>0&&upCount>0&&digit>0&&special==0){
-
-             System.out.println(" You need atleast a special chracter");
-
-         }
-
-          if(password.length()>=min&&password.length()<=max&&loCount>0&&upCount>0&&digit==0&&special==0){
-
+=
              System.out.println(" You need atleast one digit:");
 
              System.out.println(" You need atleast one special chracter:");
