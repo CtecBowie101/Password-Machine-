@@ -1,0 +1,385 @@
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+public class Password {
+
+public static void main(String[] args) {
+   
+    int min = 10;
+    int max= 16;
+    int digit = 0;
+    int special = 0;
+    int upCount = 0;
+    int loCount = 0;
+ 
+   
+   
+    boolean incorrect = true;
+    String password;
+   
+    System.out.println("Welcome to the password generator. Please enter a password that meets our requirements.");
+   
+    System.out.println("\nThe password must be atleast 10 characters long, max of 16, have a uppercase letter, a lowercase, and a special character");
+   
+    Scanner scan = new Scanner(System.in);
+   
+    System.out.println("\nInput a password that meets the security requirements:");
+   
+    while(incorrect) {
+   
+        password = scan.nextLine();
+       
+        if(password.length()>=min&&password.length()<=max){
+
+            for(int i =0;i<password.length();i++){
+
+                char c = password.charAt(i);
+
+                if(Character.isUpperCase(c)){
+
+                    upCount++;
+
+                }
+
+                if(Character.isLowerCase(c)){
+
+                    loCount++;
+
+                }
+
+                if(Character.isDigit(c)){
+
+                    digit++;
+
+                }
+
+                if(c>=33&&c<=46||c==64){
+
+                    special++;
+
+                }
+
+            }
+
+            if(special>=1&&loCount>=1&&upCount>=1&&digit>=1){
+
+                Scanner myObj = new Scanner(System.in);
+
+                System.out.println("This a valid password");
+       
+
+                System.out.println("Please enter a secret word to go with your password:");
+
+                String newWord = myObj.nextLine();
+
+                System.out.println("word recieved");
+               
+                String str,Newstr=" ";  
+               
+            System.out.print("Enter your password again to be encrypted: ");  
+            try {  
+     
+            Scanner in = new Scanner(System.in);  
+            str = in.nextLine();  
+            for (int i=0;i<str.length();i++)  
+            {  
+                char ch=Character.toLowerCase(str.charAt(i));  
+                switch (ch)  
+                {  
+                    case 'a':  
+                        Newstr=Newstr+"{";  
+                        break;  
+                    case 'b':  
+                        Newstr=Newstr+"}";  
+                        break;  
+                    case 'c':  
+                        Newstr=Newstr+"#";  
+                        break;  
+                    case 'd':  
+                        Newstr=Newstr+"~";  
+                        break;  
+                    case 'e':  
+                        Newstr=Newstr+"+";  
+                        break;  
+                    case 'f':  
+                        Newstr=Newstr+"-";  
+                        break;  
+                    case 'g':  
+                        Newstr=Newstr+"*";  
+                        break;  
+                    case 'h':  
+                        Newstr=Newstr+"@";  
+                        break;  
+                    case 'i':  
+                        Newstr=Newstr+"/";  
+                        break;  
+                    case 'j':  
+                        Newstr=Newstr+"\\";  
+                        break;  
+                    case 'k':  
+                        Newstr=Newstr+"?";  
+                        break;  
+                    case 'l':  
+                        Newstr=Newstr+"$";  
+                        break;  
+                    case 'm':  
+                        Newstr=Newstr+"!";  
+                        break;  
+                    case 'n':  
+                        Newstr=Newstr+"^";  
+                        break;  
+                    case 'o':  
+                        Newstr=Newstr+"(";  
+                        break;  
+                    case 'p':  
+                        Newstr=Newstr+")";  
+                        break;  
+                    case 'q':  
+                        Newstr=Newstr+"<";  
+                        break;  
+                    case 'r':  
+                        Newstr=Newstr+">";  
+                        break;  
+                    case 's' :  
+                        Newstr=Newstr+"=";  
+                        break;  
+                    case 't':  
+                        Newstr=Newstr+";";  
+                        break;  
+                    case 'u':  
+                        Newstr=Newstr+"%";  
+                        break;  
+                    case 'v' :  
+                        Newstr=Newstr+"_";  
+                        break;  
+                    case 'w':  
+                        Newstr=Newstr+"[";  
+                        break;  
+                    case 'x' :  
+                        Newstr=Newstr+"]";  
+                        break;  
+                    case 'y':  
+                        Newstr=Newstr+":";  
+                        break;  
+                    case 'z' :  
+                        Newstr=Newstr+"\"";  
+                        break;  
+                    case ' ' :  
+                        Newstr=Newstr+" ";  
+                        break;  
+                    case '.':  
+                        Newstr=Newstr+'5';  
+                        break;  
+                    case ',':  
+                        Newstr=Newstr+"0";  
+                        break;  
+                    case '(':  
+                        Newstr=Newstr+'3';  
+                        break;  
+                    case '\"':  
+                        Newstr=Newstr+'6';  
+                        break;  
+                    case ')' :  
+                        Newstr=Newstr+"1";  
+                        break;  
+                    case '?' :  
+                        Newstr= Newstr+"2";  
+                        break;  
+                    case '!':  
+                        Newstr= Newstr+"8";  
+                        break;  
+                    case '-' :  
+                        Newstr= Newstr+"6";  
+                        break;  
+                    case '%' :  
+                        Newstr = Newstr+"9";  
+                        break;  
+                    case '1':  
+                        Newstr=Newstr+"r";  
+                        break;  
+                    case '2':  
+                        Newstr=Newstr+"p";  
+                        break;  
+                    case '3':  
+                        Newstr=Newstr+"b";  
+                        break;  
+                    case '4':  
+                        Newstr = Newstr+"e";  
+                        break;  
+                    case '5':  
+                        Newstr = Newstr+"d";  
+                        break;  
+                    case '6':  
+                        Newstr = Newstr+"h";  
+                        break;  
+                    case '7':  
+                        Newstr = Newstr+"u";  
+                        break;  
+                    case '8' :  
+                        Newstr= Newstr+"y";  
+                        break;  
+                    case '9':  
+                        Newstr = Newstr+"x";  
+                        break;  
+                    case '0':  
+                        Newstr = Newstr+"z";  
+                        break;  
+                     default:  
+                        Newstr=Newstr+"w";  
+                        break;  
+                }  
+            }  
+            }  
+            catch(Exception ioe)  
+            {  
+                ioe.printStackTrace();  
+            }  
+            System.out.println("The encrypted password is: \n" +Newstr);  
+
+
+         
+               
+                System.out.println("Creating a hashtable for your password");
+               
+               HashMap<String, String> passWord = new HashMap<String, String>();
+               
+               passWord.put(newWord, Newstr);
+           
+               passWord.put("Block0 - Test10^$", "2386484");
+               passWord.put("Block1 - Desktop!**@", "5665829");
+               passWord.put("Block2 - Chair43%)(!", "9037574");
+               
+               
+               System.out.println("CREAING HASHTABLE: ");
+               System.out.println(passWord.size());
+               System.out.println("SLOTS RANGING FROM 0 - 3");
+
+
+               
+               Queue<String> nodeHead = new LinkedList();
+               
+               
+               nodeHead.add("pswd");
+               nodeHead.add("secret");
+               nodeHead.add("En_Word");
+               
+               System.out.println("The queue is loading the specfic for your password slot:");
+               System.out.println(nodeHead);
+               
+           
+               System.out.println(passWord);
+               
+               
+   
+               
+                break;
+
+
+            }
+
+     
+
+        }
+
+     
+
+        if(password.length()<min){
+
+     
+
+            for(int i =0;i<password.length();i++){
+
+                char c = password.charAt(i);
+
+                if(Character.isLowerCase(c)){
+
+                    loCount++;
+
+                }
+
+                }
+
+     
+
+            if(loCount>0){
+
+                System.out.println(" Password must be atleast "+min+" characters:");
+
+                System.out.println(" You did not meet requirements! You need a upper case");
+
+                System.out.println(" You did not meet requirements! You need numbers");
+
+                System.out.println(" You did not meet requirements! You need a special chracter");
+
+     
+
+     
+
+     
+
+        }
+
+        }
+
+        else if(password.length()<min&&upCount>1){
+
+            for(int i =0;i<password.length();i++){
+
+            char c =password.charAt(i);
+
+            if(Character.isLowerCase(c)){
+
+                loCount++;
+
+            }
+
+             if(Character.isUpperCase(c)){
+
+                upCount++;
+
+            }
+
+            }
+
+            if(loCount>0&&upCount>0){
+
+            System.out.println(" Password must be atleast "+min+" chracters:");
+
+            System.out.println(" You need atleast one digit:");
+
+            System.out.println(" You need atleast one special chracter:");
+            System.out.println("Please try another password");
+
+        }
+
+        }
+
+         if(password.length()>max||password.length()>=max&&upCount>1&&loCount>1&&digit>1){
+
+             System.out.println(" Password has exceeded the limit .Limit is "+max+" chracters:");
+
+                     System.out.println(" You need atleast one special chracter:");
+
+     
+
+            }
+
+          if(password.length()>=min&&password.length()<=max&&loCount>0&&upCount>0&&digit>0&&special==0){
+
+             System.out.println(" You need atleast a special chracter");
+
+         }
+
+          if(password.length()>=min&&password.length()<=max&&loCount>0&&upCount>0&&digit==0&&special==0){
+
+             System.out.println(" You need atleast one digit:");
+
+             System.out.println(" You need atleast one special chracter:");
+
+         }
+
+       }
+
+    }
+}
